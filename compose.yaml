@@ -1,0 +1,25 @@
+services:
+    server:
+      build: 
+        context: ./
+      environment:
+        NODE_ENV: development
+      volumes:
+        - ./:/app
+      ports:
+        - 5050:5050
+      env_file: 
+        - ./.env
+    database: 
+      image: "mysql:8"
+      restart: "always"
+      volumes:
+            - ./database:/docker-entrypoint-initdb.d
+      ports:
+        - "8003:3306"
+      environment:
+          - MYSQL_ROOT_PASSWORD=Password@123
+          - MYSQL_USER=scelloo
+          - MYSQL_PASSWORD=Password@123
+          - MYSQL_DATABASE=scello-api
+
