@@ -16,6 +16,8 @@ export default class AuthController {
             ? 'Kindly provide an email'
             : 'Invalid password, password must be at least 8 charactoers'
         )
+      const userExist = (await User.findOne({ where: { email } })).toJSON()
+      if (userExist) throw new ApiError(httpStatus.BAD_REQUEST, 'Email already exist')
       const user = new User({
         fullName,
         email
