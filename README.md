@@ -84,4 +84,4 @@ $ npm run nodemon
 
 Check out the Swagger documentation for the RESTFUL API sample template 
 
-- Visit the [API Documentation](https://documenter.getpostman.com/view/32105266/2sAXqzWxwg) to see the test samples and responses.
+- Visit the [API Documentation](https://scelloo-api.onrender.com/swagger/) to see the test samples and responses.
