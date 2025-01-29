@@ -5,16 +5,9 @@ const router = express.Router()
 
 /**
  * @swagger
- * tags:
- *   name: Auth
- *   description: API for managing User authentication
- */
-
-/**
- * @swagger
  * /api/v1/auth/create:
  *   post:
- *     summary: Register a new user
+ *     summary: Register a new product seller
  *     description: Creates a new user account
  *     tags: [Auth]
  *     requestBody:

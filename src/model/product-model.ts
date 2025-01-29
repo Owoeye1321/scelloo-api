@@ -29,7 +29,7 @@ Product.init(
       allowNull: false
     },
     price: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.FLOAT,
       allowNull: false
     },
     description: {

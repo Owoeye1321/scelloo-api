@@ -39,10 +39,13 @@ const { createProduct, getProduct, deleteProduct, updateProduct } = new ProductC
  *               name:
  *                 type: string
  *                 example: "Smartphone"
+ *               description:
+ *                 type: string
+ *                 example: "color black"
  *               price:
  *                 type: number
- *                 example: 199.99
- *               stock:
+ *                 example: 199
+ *               stockQuantity:
  *                 type: number
  *                 example: 10
  *               categoryId:
@@ -54,7 +57,7 @@ const { createProduct, getProduct, deleteProduct, updateProduct } = new ProductC
  *       400:
  *         description: Bad request
  */
-router.post('', authenticated, AuthorizedMiddleware([Roles.SELLER]), createProduct)
+router.post('', authenticated, AuthorizedMiddleware([Roles.SELLER, Roles.ADMIN]), createProduct)
 /**
  * @swagger
  * /api/v1/product:
@@ -153,7 +156,7 @@ router.get('', getProduct)
  *       400:
  *         description: Bad request
  */
-router.patch('', authenticated, AuthorizedMiddleware([Roles.SELLER]), updateProduct)
+router.patch('', authenticated, AuthorizedMiddleware([Roles.SELLER, Roles.ADMIN]), updateProduct)
 
 /**
  * @swagger
@@ -181,5 +184,5 @@ router.patch('', authenticated, AuthorizedMiddleware([Roles.SELLER]), updateProd
  *       400:
  *         description: Bad request
  */
-router.delete('', authenticated, AuthorizedMiddleware([Roles.SELLER]), deleteProduct)
+router.delete('', authenticated, AuthorizedMiddleware([Roles.SELLER, Roles.ADMIN]), deleteProduct)
 export default router
