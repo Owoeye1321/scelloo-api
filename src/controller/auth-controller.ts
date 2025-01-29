@@ -39,7 +39,7 @@ export default class AuthController {
       if (!email || !password)
         throw new ApiError(httpStatus.BAD_REQUEST, !email ? 'Kindly provide an email' : 'Invalid password')
       const user = (await User.findOne({ where: { email } }))?.toJSON()
-      if (!user) throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Email')
+      if (!user) throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid user')
       const userInstance = new User(user)
       if (!userInstance.validPassword(password))
         throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid user credentials')
