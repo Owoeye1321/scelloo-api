@@ -113,7 +113,8 @@ export default class ProductController {
   deleteProduct = async (req: Request | any, res: Response, next: NextFunction) => {
     try {
       const { productReference } = req.query
-      const product = await Product.findOne({ where: { productReference } })
+        const product = await Product.findOne({ where: { productReference } })
+        if (!product) throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid product')
       await product.destroy()
       res.status(httpStatus.OK).json({
         code: httpStatus.OK,

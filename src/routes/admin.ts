@@ -83,6 +83,12 @@ router.post('/category', authenticated, AuthorizedMiddleware([Roles.ADMIN]), cre
  *     summary: Update a category
  *     description: Only accessible by ADMIN users.
  *     tags: [Categories]
+ *     parameters:
+ *       - in: query
+ *         name: categoryReference
+ *         schema:
+ *           type: string
+ *         description: Reference ID of the category to filter results.
  *     security:
  *       - BearerAuth: []
  *     requestBody:
@@ -92,9 +98,6 @@ router.post('/category', authenticated, AuthorizedMiddleware([Roles.ADMIN]), cre
  *           schema:
  *             type: object
  *             properties:
- *               id:
- *                 type: integer
- *                 example: 1
  *               name:
  *                 type: string
  *                 example: "Home Appliances"
@@ -115,6 +118,12 @@ router.patch('/category', authenticated, AuthorizedMiddleware([Roles.ADMIN]), up
  *     summary: Delete a category
  *     description: Only accessible by ADMIN users.
  *     tags: [Categories]
+ *     parameters:
+ *       - in: query
+ *         name: categoryReference
+ *         schema:
+ *           type: string
+ *         description: Reference ID of the category to filter results.
  *     security:
  *       - BearerAuth: []
  *     requestBody:
@@ -124,9 +133,6 @@ router.patch('/category', authenticated, AuthorizedMiddleware([Roles.ADMIN]), up
  *           schema:
  *             type: object
  *             properties:
- *               id:
- *                 type: integer
- *                 example: 1
  *     responses:
  *       200:
  *         description: Category deleted successfully

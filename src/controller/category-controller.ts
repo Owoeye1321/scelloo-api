@@ -58,6 +58,7 @@ export default class CategoryController {
     try {
       const { categoryReference } = req.query
       const category = await Category.findOne({ where: { categoryReference } })
+      if (!category) throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid category')
       await category.destroy()
       res.status(httpStatus.OK).json({
         message: 'Category Deleted Successfully'

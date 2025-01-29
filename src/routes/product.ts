@@ -120,6 +120,12 @@ router.get('', getProduct)
  *   patch:
  *     summary: Update a product
  *     tags: [Products]
+ *     parameters:
+ *       - in: query
+ *         name: productReference
+ *         schema:
+ *           type: string
+ *         description: Reference ID of the product to filter results.
  *     security:
  *       - BearerAuth: []
  *     requestBody:
@@ -135,9 +141,6 @@ router.get('', getProduct)
  *               - stock
  *               - categoryId
  *             properties:
- *               id:
- *                 type: integer
- *                 example: 1
  *               name:
  *                 type: string
  *                 example: "Updated Smartphone"
@@ -164,6 +167,12 @@ router.patch('', authenticated, AuthorizedMiddleware([Roles.SELLER, Roles.ADMIN]
  *   delete:
  *     summary: Delete a product
  *     tags: [Products]
+ *     parameters:
+ *       - in: query
+ *         name: productReference
+ *         schema:
+ *           type: string
+ *         description: Reference ID of the product to filter results.
  *     security:
  *       - BearerAuth: []
  *     requestBody:
@@ -175,9 +184,6 @@ router.patch('', authenticated, AuthorizedMiddleware([Roles.SELLER, Roles.ADMIN]
  *             required:
  *               - id
  *             properties:
- *               id:
- *                 type: integer
- *                 example: 1
  *     responses:
  *       200:
  *         description: Product deleted successfully
