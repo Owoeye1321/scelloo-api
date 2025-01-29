@@ -78,6 +78,7 @@ export default class ProductController {
                   [Op.iLike]: `%${search}%` // Partial match, case-insensitive
                 }
               },
+              include: 'category',
               limit,
               offset,
               order: order.length > 0 ? order : [['createdAt', 'DESC']]
