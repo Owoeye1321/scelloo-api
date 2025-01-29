@@ -14,7 +14,8 @@ export const DB = {
   NAME: process.env.DB_NAME,
   PORT: Number(process.env.DB_PORT) || 27017
 }
-export const DB_URI = process.env.DB_URI
+export const DB_PROD_URI = process.env.DB_PROD_URI
+export const DB_DEV_URI = process.env.DB_DEV_URI
 export const APP_NAME = 'Scelloo Service'
 
 export const breakPoint = () => {
