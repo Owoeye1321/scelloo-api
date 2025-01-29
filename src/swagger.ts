@@ -19,7 +19,7 @@ export const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:5050'
+        url: 'https://scelloo-api.onrender.com'
       }
     ],
     components: {

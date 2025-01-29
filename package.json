@@ -1,6 +1,6 @@
 {
   "name": "Scelloo-api-service",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Scelloo-api System Service",
   "main": "index.js",
   "scripts": {
