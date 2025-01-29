@@ -7,13 +7,6 @@ export const IS_TEST = ENVIRONMENT === 'test'
 export const APP_PORT = Number(process.env.APP_PORT) || 5050
 export const APP_PREFIX_PATH = process.env.APP_PREFIX_PATH || '/'
 
-export const DB = {
-  USER: process.env.DB_USER,
-  PASSWORD: process.env.DB_PASSWORD,
-  HOST: process.env.DB_HOST,
-  NAME: process.env.DB_NAME,
-  PORT: Number(process.env.DB_PORT) || 27017
-}
 export const DB_PROD_URI = process.env.DB_PROD_URI
 export const DB_DEV_URI = process.env.DB_DEV_URI
 export const APP_NAME = 'Scelloo Service'
