@@ -1,6 +1,6 @@
 {
   "name": "Scelloo-api-service",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Scelloo-api System Service",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,6 @@
     "build": "tsc",
     "nodemon": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' -r ts-node/register/transpile-only -r tsconfig-paths/register -r dotenv/config --exec ts-node --files src/index.ts",
     "test": "export APP_ENV=test; jest",
-    "prepare": "husky install",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migrate:undo-all": "npx sequelize-cli db:migrate:undo:all",
     "db:seed": "npx sequelize-cli db:seed:all"
