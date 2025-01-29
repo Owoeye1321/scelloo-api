@@ -67,19 +67,11 @@ $ npm run db:migrate
 # development
 $ npm run nodemon
 
-## Run tests
-
-# ```bash
-# # unit tests
-# $ yarn run test
-
-# # e2e tests
-# $ yarn run test:e2e
-
-# # test coverage
-# $ yarn run test:cov
 ```
-
+- Some routes are protected with admin and product seller access
+- The default create route create a product seller and the token upon login can be used to access the seller routes
+- For higher priviledge, use the admin/create endpoint to creat an admin credential, this is not proper; However, it's essential to have an admin credential to test all the functionalities
+- For quick test, kindly use the admin token to access all protected routes if you don't have much time to switch tokens;
 ## Resources
 
 Check out the Swagger documentation for the RESTFUL API sample template 
